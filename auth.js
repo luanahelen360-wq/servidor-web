@@ -3,7 +3,7 @@
 
 const chaveUsuarios = "usuariosServidorWeb";
 
-// GERAR HASH DA SENHA
+// CRIPTOGRAFAR SENHA
 async function criptografarSenha(senha) {
     const dados = new TextEncoder().encode(senha);
     const hash = await crypto.subtle.digest("SHA-256", dados);
@@ -53,7 +53,6 @@ if (formCadastro) {
             );
 
             mensagem.textContent = "Cadastro realizado com sucesso!";
-
             formCadastro.reset();
 
             window.location.assign("./login.html");
@@ -90,8 +89,12 @@ if (formLogin) {
             );
 
             if (usuario) {
-
                 sessionStorage.setItem("usuarioLogado", usuario.nome);
+                sessionStorage.setItem("emailLogado", usuario.email);
+                sessionStorage.setItem(
+                    "dataAcesso",
+                    new Date().toLocaleString("pt-BR")
+                );
 
                 window.location.assign("./painel.html");
 
