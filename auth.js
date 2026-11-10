@@ -1,9 +1,10 @@
 
+
 // SISTEMA DE CADASTRO E LOGIN
 
 const chaveUsuarios = "usuariosServidorWeb";
 
-// Gerar hash da senha
+// GERAR HASH DA SENHA
 async function criptografarSenha(senha) {
     const dados = new TextEncoder().encode(senha);
     const hash = await crypto.subtle.digest("SHA-256", dados);
@@ -30,13 +31,17 @@ if (formCadastro) {
                 localStorage.getItem(chaveUsuarios) || "[]"
             );
 
-            const existente = usuarios.find(usuario => usuario.email === email);
+            // Verificar se o e-mail já existe
+            const existente = usuarios.find(
+                usuario => usuario.email === email
+            );
 
             if (existente) {
                 mensagem.textContent = "Este e-mail já está cadastrado!";
                 return;
             }
 
+            // Criar usuário
             const senhaHash = await criptografarSenha(senha);
 
             usuarios.push({
@@ -45,18 +50,21 @@ if (formCadastro) {
                 senha: senhaHash
             });
 
-            localStorage.setItem(chaveUsuarios, JSON.stringify(usuarios));
+            // Salvar cadastro
+            localStorage.setItem(
+                chaveUsuarios,
+                JSON.stringify(usuarios)
+            );
 
             mensagem.textContent = "Cadastro realizado com sucesso!";
 
             formCadastro.reset();
 
-            // Ir para o login após 2 segundos
-            setTimeout(function() {
-                window.location.href = "login.html";
-            }, 2000);
+            // REDIRECIONAR PARA O LOGIN
+            window.location.assign("./login.html");
 
         } catch (erro) {
+            console.error(erro);
             mensagem.textContent = "Não foi possível realizar o cadastro.";
         }
     });
@@ -80,8 +88,10 @@ if (formLogin) {
 
             const senhaHash = await criptografarSenha(senha);
 
-            const usuario = usuarios.find(usuario =>
-                usuario.email === email && usuario.senha === senhaHash
+            const usuario = usuarios.find(
+                usuario =>
+                    usuario.email === email &&
+                    usuario.senha === senhaHash
             );
 
             if (usuario) {
@@ -95,6 +105,7 @@ if (formLogin) {
             }
 
         } catch (erro) {
+            console.error(erro);
             mensagem.textContent = "Erro ao realizar login.";
         }
     });
