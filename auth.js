@@ -51,6 +51,11 @@ if (formCadastro) {
 
             formCadastro.reset();
 
+            // Ir para o login após 2 segundos
+            setTimeout(function() {
+                window.location.href = "login.html";
+            }, 2000);
+
         } catch (erro) {
             mensagem.textContent = "Não foi possível realizar o cadastro.";
         }
@@ -80,8 +85,11 @@ if (formLogin) {
             );
 
             if (usuario) {
-                mensagem.textContent = "Login realizado com sucesso! Bem-vindo, " + usuario.nome + "!";
+                mensagem.textContent =
+                    "Login realizado com sucesso! Bem-vindo, " + usuario.nome + "!";
+
                 sessionStorage.setItem("usuarioLogado", usuario.nome);
+
             } else {
                 mensagem.textContent = "E-mail ou senha incorretos.";
             }
