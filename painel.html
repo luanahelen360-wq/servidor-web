@@ -23,8 +23,7 @@
 
     <main class="secao">
         <div class="container">
-
-            <h2 id="boasVindas">Carregando...</h2>
+            <h2 id="boasVindas"></h2>
 
             <div class="cartao">
                 <h3>Seu painel</h3>
@@ -35,24 +34,24 @@
 
                 <h3>Dados da conta</h3>
                 <p id="nomeUsuario"></p>
+                <p id="emailUsuario"></p>
 
                 <button onclick="sair()">Sair da conta</button>
             </div>
-
         </div>
     </main>
 
     <script>
-        const usuario = sessionStorage.getItem("usuarioLogado");
+        const nome = sessionStorage.getItem("usuarioLogado");
 
-        if (!usuario) {
+        if (!nome) {
             window.location.href = "./login.html";
         } else {
             document.getElementById("boasVindas").textContent =
-                "Bem-vindo(a), " + usuario + "!";
+                "Bem-vindo(a), " + nome + "!";
 
             document.getElementById("nomeUsuario").textContent =
-                "Nome: " + usuario;
+                "Nome: " + nome;
         }
 
         function sair() {
