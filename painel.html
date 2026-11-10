@@ -14,6 +14,7 @@
             <a href="index.html" class="logo">
                 <span>WEB</span> SERVER
             </a>
+
             <nav>
                 <a href="index.html">Início</a>
                 <a href="#" onclick="sair()">Sair</a>
@@ -23,14 +24,22 @@
 
     <main class="secao">
         <div class="container">
+
             <h2 id="boasVindas">Bem-vindo!</h2>
 
             <div class="cartao">
                 <h3>Seu painel</h3>
                 <p>Você entrou no sistema com sucesso!</p>
                 <p>Esta é sua área de usuário.</p>
+
+                <hr>
+
+                <h3>Dados da conta</h3>
+                <p id="nomeUsuario"></p>
+
                 <button onclick="sair()">Sair da conta</button>
             </div>
+
         </div>
     </main>
 
@@ -42,6 +51,9 @@
         } else {
             document.getElementById("boasVindas").textContent =
                 "Bem-vindo(a), " + usuario + "!";
+
+            document.getElementById("nomeUsuario").textContent =
+                "Nome: " + usuario;
         }
 
         function sair() {
