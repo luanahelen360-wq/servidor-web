@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tecnologias - WEB SERVER</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .tec-pagina {
+            padding: 50px 20px;
+            background: #0b1120;
+            color: white;
+            min-height: 100vh;
+        }
+
+        .tec-intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .tec-intro h1 {
+            color: #00ff99;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .tec-intro p {
+            color: #cbd5e1;
+        }
+
+        .tec-grade {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .tec-cartao {
+            background: #111c31;
+            border: 1px solid #263b55;
+            border-radius: 14px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .tec-cartao:hover {
+            transform: translateY(-5px);
+            border-color: #00ff99;
+        }
+
+        .tec-cartao .tec-icone {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .tec-cartao h2 {
+            color: #00ff99;
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .tec-cartao p {
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        .tec-detalhes {
+            margin-top: 18px;
+        }
+
+        .tec-detalhes summary {
+            color: #00ff99;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .tec-detalhes p {
+            margin-top: 12px;
+            font-size: 14px;
+        }
+
+        .tec-voltar {
+            display: block;
+            width: fit-content;
+            margin: 35px auto 0;
+            padding: 12px 24px;
+            background: #00ff99;
+            color: #0b1120;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <div class="container navegacao">
+
+            <a href="index.html" class="logo">
+                <span>WEB</span> SERVER
+            </a>
+
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="index.html#sobre">Sobre</a>
+                <a href="tecnologias.html">Tecnologias</a>
+                <a href="login.html">Entrar</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="tec-pagina">
+
+        <section class="tec-intro">
+            <h1>Guia de Tecnologias</h1>
+
+            <p>
+                Conheça algumas das principais tecnologias
+                da Engenharia de Telecomunicações.
+            </p>
+        </section>
+
+        <section class="tec-grade">
+
+            <article class="tec-cartao">
+                <div class="tec-icone">💡</div>
+                <h2>Fibra Óptica</h2>
+
+                <p>
+                    Tecnologia que transmite informações
+                    por meio de sinais luminosos.
+                </p>
+
+                <details class="tec-detalhes">
+                    <summary>Saiba mais</summary>
+                    <p>
+                        A fibra óptica utiliza filamentos de vidro
+                        ou plástico para transportar dados através
+                        da luz. É muito utilizada na internet de alta
+                        velocidade e em redes de comunicação.
+                    </p>
+                </details>
+            </article>
+
+            <article class="tec-cartao">
+                <div class="tec-icone">📶</div>
+                <h2>Tecnologia 5G</h2>
+
+                <p>
+                    Quinta geração das redes de comunicação móvel.
+                </p>
+
+                <details class="tec-detalhes">
+                    <summary>Saiba mais</summary>
+                    <p>
+                        O 5G permite conexões móveis com maior
+                        capacidade, baixa latência e suporte a
+                        muitos dispositivos conectados.
+                    </p>
+                </details>
+            </article>
+
+            <article class="tec-cartao">
+                <div class="tec-icone">📡</div>
+                <h2>Wi-Fi</h2>
+
+                <p>
+                    Tecnologia que permite a conexão sem fio
+                    entre dispositivos.
+                </p>
+
+                <details class="tec-detalhes">
+                    <summary>Saiba mais</summary>
+                    <p>
+                        O Wi-Fi utiliza ondas de rádio para
+                        transmitir dados entre dispositivos e
+                        pontos de acesso, permitindo o acesso
+                        à internet sem cabos.
+                    </p>
+                </details>
+            </article>
+
+            <article class="tec-cartao">
+                <div class="tec-icone">🛰️</div>
+                <h2>Satélites</h2>
+
+                <p>
+                    Equipamentos utilizados na comunicação
+                    a longas distâncias.
+                </p>
+
+                <details class="tec-detalhes">
+                    <summary>Saiba mais</summary>
+                    <p>
+                        Os satélites recebem e retransmitem sinais,
+                        possibilitando serviços de televisão,
+                        internet, navegação e comunicação em
+                        regiões remotas.
+                    </p>
+                </details>
+            </article>
+
+            <article class="tec-cartao">
+                <div class="tec-icone">📻</div>
+                <h2>Antenas</h2>
+
+                <p>
+                    Dispositivos responsáveis pela transmissão
+                    e recepção de ondas eletromagnéticas.
+                </p>
+
+                <details class="tec-detalhes">
+                    <summary>Saiba mais</summary>
+                    <p>
+                        As antenas são fundamentais em sistemas
+                        de rádio, televisão, telefonia móvel,
+                        comunicação via satélite e redes sem fio.
+                    </p>
+                </details>
+            </article>
+
+            <article class="tec-cartao">
+                <div class="tec-icone">🌐</div>
+                <h2>Redes de Comunicação</h2>
+
+                <p>
+                    Sistemas que conectam dispositivos
+                    e permitem a troca de informações.
+                </p>
+
+                <details class="tec-detalhes">
+                    <summary>Saiba mais</summary>
+                    <p>
+                        As redes de comunicação permitem que
+                        computadores, celulares e servidores
+                        compartilhem dados por meio de
+                        diferentes tecnologias e protocolos.
+                    </p>
+                </details>
+            </article>
+
+        </section>
+
+        <a href="index.html" class="tec-voltar">
+            Voltar ao início
+        </a>
+
+    </main>
+
+</body>
+</html>
