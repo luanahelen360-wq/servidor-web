@@ -1,30 +1,31 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Meu Servidor Web</title>
-
-    <meta name="description" content="Meu primeiro projeto web.">
+    <title>WEB SERVER - Engenharia de Telecomunicações</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- CABEÇALHO -->
     <header class="cabecalho">
         <div class="container navegacao">
 
-            <a href="#inicio" class="logo">
+            <a href="index.html" class="logo">
                 <span>WEB</span> SERVER
             </a>
 
             <nav>
-                <a href="#inicio">Início</a>
+                <a href="index.html">Início</a>
                 <a href="#sobre">Sobre</a>
                 <a href="#servicos">Serviços</a>
+                <a href="tecnologias.html">Tecnologias</a>
                 <a href="#contato">Contato</a>
                 <a href="login.html">Entrar</a>
                 <a href="cadastro.html">Criar conta</a>
@@ -33,100 +34,101 @@
         </div>
     </header>
 
+    <!-- APRESENTAÇÃO -->
     <main>
 
-        <!-- PÁGINA INICIAL -->
-        <section id="inicio" class="hero">
+        <section class="hero">
             <div class="container">
 
-                <span class="etiqueta">
-                    MEU PRIMEIRO PROJETO WEB
-                </span>
-
-                <h1>
-                    Bem-vindo ao meu
-                    <span>Servidor Web!</span>
-                </h1>
+                <h1>Bem-vindo ao <span>WEB SERVER</span></h1>
 
                 <p>
-                    Tecnologia, criatividade e inovação.
-                    Este é meu primeiro projeto publicado
-                    na internet usando GitHub Pages.
+                    Conectando pessoas, tecnologias e informações
+                    por meio da Engenharia de Telecomunicações.
                 </p>
 
-                <a href="#sobre" class="botao">
-                    Conhecer projeto
+                <a href="tecnologias.html" class="botao">
+                    Conheça as tecnologias
                 </a>
 
             </div>
         </section>
 
         <!-- SOBRE -->
-        <section id="sobre" class="secao">
+        <section class="secao" id="sobre">
             <div class="container">
 
                 <h2>Sobre o projeto</h2>
 
                 <p>
-                    Este site foi desenvolvido com
-                    HTML, CSS e JavaScript.
-                    Meu objetivo é aprender a criar
-                    aplicações web modernas.
+                    O WEB SERVER é um projeto desenvolvido com o objetivo
+                    de apresentar conceitos e tecnologias relacionados
+                    à Engenharia de Telecomunicações.
+                </p>
+
+                <p>
+                    Nosso propósito é compartilhar informações sobre
+                    sistemas de comunicação, redes e tecnologias
+                    utilizadas para conectar o mundo.
                 </p>
 
             </div>
         </section>
 
         <!-- SERVIÇOS -->
-        <section id="servicos" class="secao">
+        <section class="secao" id="servicos">
             <div class="container">
 
-                <h2>O que estou aprendendo</h2>
+                <h2>O que você encontra aqui?</h2>
 
                 <div class="cartoes">
 
-                    <article class="cartao">
-                        <h3>HTML</h3>
+                    <div class="cartao">
+                        <h3>Tecnologias</h3>
                         <p>
-                            Estrutura e organização
-                            das páginas.
+                            Conheça as principais tecnologias
+                            utilizadas nas telecomunicações.
                         </p>
-                    </article>
+                        <a href="tecnologias.html">Saiba mais</a>
+                    </div>
 
-                    <article class="cartao">
-                        <h3>CSS</h3>
+                    <div class="cartao">
+                        <h3>Redes de Comunicação</h3>
                         <p>
-                            Design, cores e aparência
-                            do site.
+                            Entenda como os dispositivos se conectam
+                            e compartilham informações.
                         </p>
-                    </article>
+                        <a href="tecnologias.html">Saiba mais</a>
+                    </div>
 
-                    <article class="cartao">
-                        <h3>JavaScript</h3>
+                    <div class="cartao">
+                        <h3>Engenharia de Telecomunicações</h3>
                         <p>
-                            Interatividade e funções
-                            para o site.
+                            Explore conceitos e aplicações
+                            dessa área da engenharia.
                         </p>
-                    </article>
+                        <a href="tecnologias.html">Saiba mais</a>
+                    </div>
 
                 </div>
+
             </div>
         </section>
 
         <!-- CONTATO -->
-        <section id="contato" class="secao contato">
+        <section class="secao" id="contato">
             <div class="container">
 
                 <h2>Contato</h2>
 
                 <p>
-                    Obrigado por visitar meu primeiro
-                    projeto web!
+                    Obrigado por visitar nosso projeto WEB SERVER.
                 </p>
 
-                <button onclick="mostrarMensagem()">
-                    Clique aqui
-                </button>
+                <p>
+                    Desenvolvido por estudantes de Engenharia
+                    de Telecomunicações.
+                </p>
 
             </div>
         </section>
@@ -134,8 +136,15 @@
     </main>
 
     <!-- RODAPÉ -->
-    <footer>
-        <p>Meu Servidor Web | Desenvolvido em 2026</p>
+    <footer class="rodape">
+        <div class="container">
+
+            <p>
+                © 2026 WEB SERVER - Engenharia de Telecomunicações.
+                Todos os direitos reservados.
+            </p>
+
+        </div>
     </footer>
 
     <script src="script.js"></script>
