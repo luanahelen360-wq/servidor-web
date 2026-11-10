@@ -23,7 +23,8 @@
 
     <main class="secao">
         <div class="container">
-            <h2 id="boasVindas"></h2>
+
+            <h2 id="boasVindas">Bem-vindo!</h2>
 
             <div class="cartao">
                 <h3>Seu painel</h3>
@@ -33,16 +34,21 @@
                 <hr>
 
                 <h3>Dados da conta</h3>
+
                 <p id="nomeUsuario"></p>
                 <p id="emailUsuario"></p>
+                <p id="dataAcesso"></p>
 
                 <button onclick="sair()">Sair da conta</button>
             </div>
+
         </div>
     </main>
 
     <script>
         const nome = sessionStorage.getItem("usuarioLogado");
+        const email = sessionStorage.getItem("emailLogado");
+        const data = sessionStorage.getItem("dataAcesso");
 
         if (!nome) {
             window.location.href = "./login.html";
@@ -52,10 +58,16 @@
 
             document.getElementById("nomeUsuario").textContent =
                 "Nome: " + nome;
+
+            document.getElementById("emailUsuario").textContent =
+                "E-mail: " + (email || "Não informado");
+
+            document.getElementById("dataAcesso").textContent =
+                "Data de acesso: " + (data || "Não informada");
         }
 
         function sair() {
-            sessionStorage.removeItem("usuarioLogado");
+            sessionStorage.clear();
             window.location.href = "./login.html";
         }
     </script>
