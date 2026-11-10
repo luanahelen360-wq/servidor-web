@@ -14,7 +14,6 @@
             <a href="index.html" class="logo">
                 <span>WEB</span> SERVER
             </a>
-
             <nav>
                 <a href="index.html">Início</a>
                 <a href="#" onclick="sair()">Sair</a>
@@ -25,7 +24,7 @@
     <main class="secao">
         <div class="container">
 
-            <h2 id="boasVindas">Bem-vindo!</h2>
+            <h2 id="boasVindas">Carregando...</h2>
 
             <div class="cartao">
                 <h3>Seu painel</h3>
@@ -47,7 +46,7 @@
         const usuario = sessionStorage.getItem("usuarioLogado");
 
         if (!usuario) {
-            window.location.href = "login.html";
+            window.location.href = "./login.html";
         } else {
             document.getElementById("boasVindas").textContent =
                 "Bem-vindo(a), " + usuario + "!";
@@ -58,7 +57,7 @@
 
         function sair() {
             sessionStorage.removeItem("usuarioLogado");
-            window.location.href = "login.html";
+            window.location.href = "./login.html";
         }
     </script>
 
