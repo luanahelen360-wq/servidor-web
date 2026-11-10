@@ -1,11 +1,137 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Meu Servidor Web</title>
+
+    <meta name="description" content="Meu primeiro projeto web profissional.">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Meu primeiro servidor web!</h1>
-    <p>Meu site está funcionando!</p>
+
+    <header class="cabecalho">
+        <div class="container navegacao">
+
+            <a href="#inicio" class="logo">
+                <span>WEB</span> SERVER
+            </a>
+
+            <nav>
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#contato">Contato</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section id="inicio" class="hero">
+            <div class="container">
+
+                <span class="etiqueta">
+                    MEU PRIMEIRO PROJETO WEB
+                </span>
+
+                <h1>
+                    Bem-vindo ao meu
+                    <span>Servidor Web!</span>
+                </h1>
+
+                <p>
+                    Tecnologia, criatividade e inovação.
+                    Este é meu primeiro projeto publicado
+                    na internet usando GitHub Pages.
+                </p>
+
+                <a href="#sobre" class="botao">
+                    Conhecer projeto
+                </a>
+
+            </div>
+        </section>
+
+        <section id="sobre" class="secao">
+            <div class="container">
+
+                <h2>Sobre o projeto</h2>
+
+                <p>
+                    Este site foi desenvolvido com
+                    HTML, CSS e JavaScript.
+                    Meu objetivo é aprender a criar
+                    aplicações web modernas.
+                </p>
+
+            </div>
+        </section>
+
+        <section id="servicos" class="secao">
+            <div class="container">
+
+                <h2>O que estou aprendendo</h2>
+
+                <div class="cartoes">
+
+                    <article class="cartao">
+                        <h3>HTML</h3>
+                        <p>
+                            Estrutura e organização
+                            das páginas.
+                        </p>
+                    </article>
+
+                    <article class="cartao">
+                        <h3>CSS</h3>
+                        <p>
+                            Design, cores e aparência
+                            profissional.
+                        </p>
+                    </article>
+
+                    <article class="cartao">
+                        <h3>JavaScript</h3>
+                        <p>
+                            Interatividade e funções
+                            para o site.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="secao contato">
+            <div class="container">
+
+                <h2>Contato</h2>
+
+                <p>
+                    Obrigado por visitar meu primeiro
+                    projeto web!
+                </p>
+
+                <button onclick="mostrarMensagem()">
+                    Clique aqui
+                </button>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Meu Servidor Web | Desenvolvido em 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
