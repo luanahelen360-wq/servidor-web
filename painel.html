@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel - Meu Servidor Web</title>
+    <title>Meu Painel - Web Server</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <header class="cabecalho">
@@ -14,6 +15,7 @@
             <a href="index.html" class="logo">
                 <span>WEB</span> SERVER
             </a>
+
             <nav>
                 <a href="index.html">Início</a>
                 <a href="#" onclick="sair()">Sair</a>
@@ -24,7 +26,7 @@
     <main class="secao">
         <div class="container">
 
-            <h2 id="boasVindas">Bem-vindo!</h2>
+            <h2 id="boasVindas">Seu painel</h2>
 
             <div class="cartao">
                 <h3>Seu painel</h3>
@@ -35,9 +37,9 @@
 
                 <h3>Dados da conta</h3>
 
-                <p id="nomeUsuario"></p>
-                <p id="emailUsuario"></p>
-                <p id="dataAcesso"></p>
+                <p><strong>Nome:</strong> <span id="nomeUsuario"></span></p>
+                <p><strong>E-mail:</strong> <span id="emailUsuario"></span></p>
+                <p><strong>Data de acesso:</strong> <span id="dataAcesso"></span></p>
 
                 <button onclick="sair()">Sair da conta</button>
             </div>
@@ -51,19 +53,19 @@
         const data = sessionStorage.getItem("dataAcesso");
 
         if (!nome) {
-            window.location.href = "./login.html";
+            window.location.replace("./login.html");
         } else {
             document.getElementById("boasVindas").textContent =
                 "Bem-vindo(a), " + nome + "!";
 
             document.getElementById("nomeUsuario").textContent =
-                "Nome: " + nome;
+                nome;
 
             document.getElementById("emailUsuario").textContent =
-                "E-mail: " + (email || "Não informado");
+                email || "Não encontrado";
 
             document.getElementById("dataAcesso").textContent =
-                "Data de acesso: " + (data || "Não informada");
+                data || "Não registrada";
         }
 
         function sair() {
