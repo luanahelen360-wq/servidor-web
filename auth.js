@@ -1,5 +1,4 @@
 
-
 // SISTEMA DE CADASTRO E LOGIN
 
 const chaveUsuarios = "usuariosServidorWeb";
@@ -31,7 +30,6 @@ if (formCadastro) {
                 localStorage.getItem(chaveUsuarios) || "[]"
             );
 
-            // Verificar se o e-mail já existe
             const existente = usuarios.find(
                 usuario => usuario.email === email
             );
@@ -41,7 +39,6 @@ if (formCadastro) {
                 return;
             }
 
-            // Criar usuário
             const senhaHash = await criptografarSenha(senha);
 
             usuarios.push({
@@ -50,7 +47,6 @@ if (formCadastro) {
                 senha: senhaHash
             });
 
-            // Salvar cadastro
             localStorage.setItem(
                 chaveUsuarios,
                 JSON.stringify(usuarios)
@@ -60,12 +56,11 @@ if (formCadastro) {
 
             formCadastro.reset();
 
-            // REDIRECIONAR PARA O LOGIN
             window.location.assign("./login.html");
 
         } catch (erro) {
             console.error(erro);
-            mensagem.textContent = "Não foi possível realizar o cadastro.";
+            mensagem.textContent = "Erro ao realizar cadastro.";
         }
     });
 }
@@ -95,10 +90,10 @@ if (formLogin) {
             );
 
             if (usuario) {
-                mensagem.textContent =
-                    "Login realizado com sucesso! Bem-vindo, " + usuario.nome + "!";
 
                 sessionStorage.setItem("usuarioLogado", usuario.nome);
+
+                window.location.assign("./painel.html");
 
             } else {
                 mensagem.textContent = "E-mail ou senha incorretos.";
