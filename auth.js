@@ -47,15 +47,12 @@ if (formCadastro) {
                 senha: senhaHash
             });
 
-            localStorage.setItem(
-                chaveUsuarios,
-                JSON.stringify(usuarios)
-            );
+            localStorage.setItem(chaveUsuarios, JSON.stringify(usuarios));
 
             mensagem.textContent = "Cadastro realizado com sucesso!";
             formCadastro.reset();
 
-            window.location.assign("./login.html");
+            window.location.href = "./login.html";
 
         } catch (erro) {
             console.error(erro);
@@ -89,14 +86,16 @@ if (formLogin) {
             );
 
             if (usuario) {
+                // LIMPAR DADOS DA SESSÃO ANTERIOR
+                sessionStorage.clear();
+
+                // SALVAR TODOS OS DADOS DO USUÁRIO
                 sessionStorage.setItem("usuarioLogado", usuario.nome);
                 sessionStorage.setItem("emailLogado", usuario.email);
-                sessionStorage.setItem(
-                    "dataAcesso",
-                    new Date().toLocaleString("pt-BR")
-                );
+                sessionStorage.setItem("dataAcesso", new Date().toLocaleString("pt-BR"));
 
-                window.location.assign("./painel.html");
+                // IR PARA O PAINEL
+                window.location.href = "./painel.html";
 
             } else {
                 mensagem.textContent = "E-mail ou senha incorretos.";
