@@ -1,23 +1,344 @@
-/* VISUAL PRINCIPAL DO SITE */
-body {
-    background-color: #0b1120;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
+
+/* CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-.secao {
+body {
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #0b1120;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    color: #00ff99;
+    text-decoration: none;
+}
+
+a:hover {
     color: #ffffff;
 }
 
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* CABEÇALHO */
+.cabecalho {
+    background-color: #080d18;
+    border-bottom: 1px solid #00ff99;
+    padding: 20px 0;
+}
+
+.navegacao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.logo span {
+    color: #00ff99;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+nav a {
+    color: #ffffff;
+}
+
+/* INÍCIO */
+.hero {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 20px;
+    background: linear-gradient(135deg, #0b1120, #102b35);
+}
+
+.hero h1 {
+    color: #00ff99;
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 750px;
+    font-size: 18px;
+}
+
+/* SEÇÕES */
+.secao {
+    padding: 65px 0;
+    background-color: #0b1120;
+    color: #ffffff;
+    scroll-margin-top: 30px;
+}
+
+.secao h2 {
+    color: #00ff99;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.secao p {
+    margin-bottom: 15px;
+}
+
+/* CARTÕES */
+.cartoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin-top: 30px;
+    justify-items: center;
+}
+
 .cartao {
+    width: 100%;
     background-color: #111c2e;
     color: #ffffff;
     border: 1px solid #26364b;
     border-radius: 10px;
     padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.cartao:hover {
+    transform: translateY(-4px);
+    border-color: #00ff99;
+}
+
+.cartao h3 {
+    color: #00ff99;
+    margin-bottom: 12px;
+}
+
+/* MEDIDOR */
+.medidor {
+    text-align: center;
+}
+
+#velocimetro {
+    --angulo: 0deg;
+    --ponteiro: -135deg;
+    width: 220px;
+    height: 220px;
+    margin: 30px auto;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 225deg,
+        #00ff99 0deg,
+        #00ff99 var(--angulo),
+        #26364b var(--angulo),
+        #26364b 270deg,
+        transparent 270deg
+    );
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#velocimetro::before {
+    content: "";
+    position: absolute;
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    background-color: #0b1120;
+}
+
+#velocimetro::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 75px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    bottom: 50%;
+    left: calc(50% - 2px);
+    transform-origin: bottom center;
+    transform: rotate(var(--ponteiro));
+}
+
+#velocidade {
+    position: relative;
+    z-index: 2;
+    font-size: 35px;
+    font-weight: bold;
+    color: #00ff99;
+}
+
+#medidor {
+    text-align: center;
+}
+
+#download,
+#upload,
+#ping {
+    color: #00ff99;
+    font-weight: bold;
+}
+
+/* BOTÕES */
+button {
+    background-color: #00ff99;
+    color: #0b1120;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 25px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #00cc7a;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* LOGIN E CADASTRO */
+form.cartao {
+    max-width: 450px;
+    margin: 30px auto;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+form input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #26364b;
+    border-radius: 6px;
+    background-color: #0b1120;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+form input:focus {
+    outline: 1px solid #00ff99;
+}
+
+form p {
+    text-align: center;
+}
+
+/* TECNOLOGIAS INTERATIVAS */
+.tecnologia-card {
+    cursor: pointer;
+}
+
+.tecnologia-card summary {
+    color: #00ff99;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+}
+
+.tecnologia-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.tecnologia-card summary::after {
+    content: "+";
+    float: right;
+    font-size: 24px;
+}
+
+.tecnologia-card[open] summary::after {
+    content: "−";
+}
+
+.tecnologia-conteudo {
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px solid #00ff99;
+}
+
+.tecnologia-conteudo p {
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+/* CENTRALIZAÇÃO */
+#sobre,
+#medidor,
+#servicos,
+#tecnologias,
+#contato,
+#conta {
+    text-align: center;
+}
+
+#medidor #velocimetro {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* RODAPÉ */
+.rodape {
+    background-color: #080d18;
+    border-top: 1px solid #26364b;
+    text-align: center;
+    padding: 25px 15px;
+    color: #aab5c5;
+}
+
+/* CELULARES */
+@media (max-width: 768px) {
+    .navegacao {
+        flex-direction: column;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .secao {
+        padding: 45px 0;
+    }
 }
