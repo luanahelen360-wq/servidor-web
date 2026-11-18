@@ -80,16 +80,25 @@ nav a {
     background: linear-gradient(135deg, #0b1120, #102b35);
 }
 
+/* CENTRALIZAÇÃO DO PAINEL INICIAL */
+.hero .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
 .hero h1 {
     color: #00ff99;
     font-size: 38px;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
     text-align: center;
     width: 100%;
 }
 
 .hero p {
     max-width: 750px;
+    width: 100%;
     font-size: 18px;
     text-align: center;
     margin: 0 auto;
@@ -304,7 +313,7 @@ form p {
     margin-bottom: 12px;
 }
 
-/* CENTRALIZAÇÃO */
+/* CENTRALIZAÇÃO DAS SEÇÕES */
 #sobre,
 #medidor,
 #servicos,
