@@ -1,6 +1,275 @@
 
-/* CARTÕES INTERATIVOS DE TECNOLOGIA */
+/* CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0b1120;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    color: #00ff99;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* CABEÇALHO */
+.cabecalho {
+    background-color: #080d18;
+    border-bottom: 1px solid #00ff99;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navegacao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.logo span {
+    color: #00ff99;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+nav a {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #00ff99;
+}
+
+/* SEÇÃO INICIAL */
+.hero {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 20px;
+    background: linear-gradient(135deg, #0b1120, #102b35);
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: #00ff99;
+}
+
+.hero p {
+    max-width: 750px;
+    font-size: 18px;
+}
+
+/* SEÇÕES */
+.secao {
+    padding: 65px 0;
+    scroll-margin-top: 90px;
+}
+
+.secao h2 {
+    color: #00ff99;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.secao p {
+    margin-bottom: 15px;
+}
+
+/* CARTÕES */
+.cartoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.cartao {
+    background-color: #111c2e;
+    border: 1px solid #26364b;
+    border-radius: 10px;
+    padding: 25px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.cartao:hover {
+    transform: translateY(-4px);
+    border-color: #00ff99;
+}
+
+.cartao h3 {
+    color: #00ff99;
+    margin-bottom: 12px;
+}
+
+.cartao p {
+    color: #d5dce5;
+}
+
+/* MEDIDOR */
+.medidor {
+    text-align: center;
+}
+
+#velocimetro {
+    --angulo: 0deg;
+    --ponteiro: -135deg;
+    width: 220px;
+    height: 220px;
+    margin: 30px auto;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 225deg,
+        #00ff99 0deg,
+        #00ff99 var(--angulo),
+        #26364b var(--angulo),
+        #26364b 270deg,
+        transparent 270deg
+    );
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#velocimetro::before {
+    content: "";
+    position: absolute;
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    background-color: #0b1120;
+}
+
+#velocimetro::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 75px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    bottom: 50%;
+    left: calc(50% - 2px);
+    transform-origin: bottom center;
+    transform: rotate(var(--ponteiro));
+}
+
+#velocidade {
+    position: relative;
+    z-index: 2;
+    font-size: 35px;
+    font-weight: bold;
+    color: #00ff99;
+}
+
+button {
+    background-color: #00ff99;
+    color: #0b1120;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 25px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #00cc7a;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#statusTeste {
+    margin: 15px 0;
+}
+
+#download,
+#upload,
+#ping {
+    color: #00ff99;
+    font-weight: bold;
+}
+
+/* FORMULÁRIOS */
+form {
+    color: #ffffff;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #26364b;
+    border-radius: 6px;
+    background-color: #0b1120;
+    color: #ffffff;
+}
+
+form input:focus {
+    outline: 1px solid #00ff99;
+}
+
+/* CONTATO E CONTA */
+#contato,
+#conta {
+    text-align: center;
+}
+
+#contato p,
+#conta p {
+    margin-bottom: 10px;
+}
+
+/* CARTÕES INTERATIVOS DE TECNOLOGIA */
 .tecnologia-card {
     cursor: pointer;
     transition: transform 0.3s ease, border-color 0.3s ease;
@@ -42,4 +311,36 @@
 .tecnologia-conteudo p {
     line-height: 1.7;
     margin-bottom: 12px;
+}
+
+/* RODAPÉ */
+.rodape {
+    background-color: #080d18;
+    border-top: 1px solid #26364b;
+    text-align: center;
+    padding: 25px 15px;
+    color: #aab5c5;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .navegacao {
+        flex-direction: column;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .secao {
+        padding: 45px 0;
+    }
 }
