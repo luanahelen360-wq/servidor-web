@@ -1,48 +1,326 @@
 
-<details class="cartao tecnologia-card">
-    <summary>🌐 Fibra Óptica</summary>
-    <div class="tecnologia-conteudo">
-        <p>💡 Transmite informações por meio de sinais luminosos.</p>
-        <p>⚡ Oferece alta velocidade e estabilidade na conexão.</p>
-    </div>
-</details>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<details class="cartao tecnologia-card">
-    <summary>📡 Tecnologia 5G</summary>
-    <div class="tecnologia-conteudo">
-        <p>📱 Quinta geração das redes móveis.</p>
-        <p>🚀 Permite conexões rápidas e baixa latência.</p>
-    </div>
-</details>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB SERVER - Painel de Controle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-<details class="cartao tecnologia-card">
-    <summary>📶 Wi-Fi</summary>
-    <div class="tecnologia-conteudo">
-        <p>💻 Permite conectar dispositivos à rede sem fio.</p>
-        <p>🏠 É muito utilizado em residências e empresas.</p>
-    </div>
-</details>
+<body>
 
-<details class="cartao tecnologia-card">
-    <summary>🛰️ Satélites</summary>
-    <div class="tecnologia-conteudo">
-        <p>🌍 Permitem a comunicação a longas distâncias.</p>
-        <p>📡 São utilizados em telecomunicações e transmissão de dados.</p>
-    </div>
-</details>
+    <script>
+        const nome = sessionStorage.getItem("usuarioLogado");
 
-<details class="cartao tecnologia-card">
-    <summary>📻 Antenas</summary>
-    <div class="tecnologia-conteudo">
-        <p>📡 Transmitem e recebem ondas eletromagnéticas.</p>
-        <p>🔗 São essenciais para os sistemas de comunicação.</p>
-    </div>
-</details>
+        if (!nome) {
+            window.location.replace("./login.html");
+        }
+    </script>
 
-<details class="cartao tecnologia-card">
-    <summary>🔗 Redes de Comunicação</summary>
-    <div class="tecnologia-conteudo">
-        <p>🌐 Conectam dispositivos e sistemas.</p>
-        <p>💬 Permitem a troca de informações entre diferentes locais.</p>
-    </div>
-</details>
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+        <div class="container navegacao">
+
+            <a href="#inicio" class="logo">
+                <span>WEB</span> SERVER
+            </a>
+
+            <nav>
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#medidor">Medidor</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#tecnologias">Tecnologias</a>
+                <a href="#contato">Contato</a>
+                <a href="#conta">Minha conta</a>
+                <a href="javascript:void(0)" onclick="sair()">Sair</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- INÍCIO -->
+        <section id="inicio" class="hero">
+            <div class="container">
+                <h1>Painel de Controle</h1>
+
+                <p>
+                    Bem-vindo ao WEB SERVER!
+                    Explore informações sobre servidores web,
+                    redes de comunicação e tecnologias de telecomunicações.
+                </p>
+            </div>
+        </section>
+
+        <!-- SOBRE -->
+        <section id="sobre" class="secao">
+            <div class="container">
+
+                <h2>Sobre o Projeto</h2>
+
+                <p>
+                    O WEB SERVER é um projeto desenvolvido na área de
+                    Engenharia de Telecomunicações, com o objetivo de
+                    apresentar conceitos relacionados à comunicação,
+                    conectividade e funcionamento das redes.
+                </p>
+
+                <p>
+                    A plataforma reúne informações sobre tecnologias
+                    utilizadas na transmissão de dados e disponibiliza
+                    um medidor ilustrativo de velocidade de conexão.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- MEDIDOR -->
+        <section id="medidor" class="secao">
+            <div class="container">
+
+                <h2>Teste de Velocidade</h2>
+
+                <p>
+                    Verifique uma demonstração ilustrativa de velocidade
+                    de conexão.
+                </p>
+
+                <div class="cartao medidor">
+
+                    <div id="velocimetro">
+                        <span id="velocidade">0</span>
+                    </div>
+
+                    <p>Velocidade de download</p>
+
+                    <p id="statusTeste">
+                        Aguardando início do teste...
+                    </p>
+
+                    <button
+                        type="button"
+                        id="botaoTeste"
+                        onclick="iniciarTeste()">
+                        Iniciar teste
+                    </button>
+
+                    <div class="cartoes">
+
+                        <div class="cartao">
+                            <h3>Download</h3>
+                            <p id="download">0 Mbps</p>
+                        </div>
+
+                        <div class="cartao">
+                            <h3>Upload</h3>
+                            <p id="upload">0 Mbps</p>
+                        </div>
+
+                        <div class="cartao">
+                            <h3>Ping</h3>
+                            <p id="ping">0 ms</p>
+                        </div>
+
+                    </div>
+
+                    <p>
+                        <small>
+                            Os valores apresentados são simulados e não
+                            representam uma medição real da conexão.
+                        </small>
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SERVIÇOS -->
+        <section id="servicos" class="secao">
+            <div class="container">
+
+                <h2>Serviços</h2>
+
+                <div class="cartoes">
+
+                    <div class="cartao">
+                        <h3>Tecnologias</h3>
+                        <p>
+                            Conheça tecnologias utilizadas na transmissão
+                            de dados e na comunicação.
+                        </p>
+                    </div>
+
+                    <div class="cartao">
+                        <h3>Redes de Comunicação</h3>
+                        <p>
+                            Entenda como dispositivos e sistemas se
+                            conectam e compartilham informações.
+                        </p>
+                    </div>
+
+                    <div class="cartao">
+                        <h3>Engenharia de Telecomunicações</h3>
+                        <p>
+                            Explore conceitos relacionados aos sistemas
+                            de comunicação e conectividade.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TECNOLOGIAS -->
+        <section id="tecnologias" class="secao">
+            <div class="container">
+
+                <h2>Tecnologias de Comunicação</h2>
+
+                <div class="cartoes">
+
+                    <details class="cartao tecnologia-card">
+                        <summary>🌐 Fibra Óptica</summary>
+                        <div class="tecnologia-conteudo">
+                            <p>💡 Transmite informações por meio de sinais luminosos.</p>
+                            <p>⚡ Oferece alta velocidade e estabilidade na conexão.</p>
+                        </div>
+                    </details>
+
+                    <details class="cartao tecnologia-card">
+                        <summary>📡 Tecnologia 5G</summary>
+                        <div class="tecnologia-conteudo">
+                            <p>📱 Quinta geração das redes móveis.</p>
+                            <p>🚀 Permite conexões rápidas e baixa latência.</p>
+                        </div>
+                    </details>
+
+                    <details class="cartao tecnologia-card">
+                        <summary>📶 Wi-Fi</summary>
+                        <div class="tecnologia-conteudo">
+                            <p>💻 Permite conectar dispositivos à rede sem fio.</p>
+                            <p>🏠 É muito utilizado em residências e empresas.</p>
+                        </div>
+                    </details>
+
+                    <details class="cartao tecnologia-card">
+                        <summary>🛰️ Satélites</summary>
+                        <div class="tecnologia-conteudo">
+                            <p>🌍 Permitem a comunicação a longas distâncias.</p>
+                            <p>📡 São utilizados em telecomunicações e transmissão de dados.</p>
+                        </div>
+                    </details>
+
+                    <details class="cartao tecnologia-card">
+                        <summary>📻 Antenas</summary>
+                        <div class="tecnologia-conteudo">
+                            <p>📡 Transmitem e recebem ondas eletromagnéticas.</p>
+                            <p>🔗 São essenciais para os sistemas de comunicação.</p>
+                        </div>
+                    </details>
+
+                    <details class="cartao tecnologia-card">
+                        <summary>🔗 Redes de Comunicação</summary>
+                        <div class="tecnologia-conteudo">
+                            <p>🌐 Conectam dispositivos e sistemas.</p>
+                            <p>💬 Permitem a troca de informações entre diferentes locais.</p>
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contato" class="secao">
+            <div class="container">
+
+                <h2>Contato</h2>
+
+                <p>
+                    Obrigado por conhecer o projeto WEB SERVER.
+                </p>
+
+                <p>
+                    Projeto acadêmico desenvolvido na área de
+                    Engenharia de Telecomunicações.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- MINHA CONTA -->
+        <section id="conta" class="secao">
+            <div class="container">
+
+                <h2>Minha Conta</h2>
+
+                <div class="cartao">
+
+                    <h3 id="boasVindas">Bem-vindo!</h3>
+
+                    <p>
+                        <strong>Nome:</strong>
+                        <span id="nomeUsuario"></span>
+                    </p>
+
+                    <p>
+                        <strong>E-mail:</strong>
+                        <span id="emailUsuario"></span>
+                    </p>
+
+                    <p>
+                        <strong>Último acesso:</strong>
+                        <span id="dataAcesso"></span>
+                    </p>
+
+                    <button type="button" onclick="sair()">
+                        Sair da conta
+                    </button>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+        <p>WEB SERVER - Projeto de Engenharia de Telecomunicações</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        const email = sessionStorage.getItem("emailLogado");
+        const data = sessionStorage.getItem("dataAcesso");
+
+        if (nome) {
+            document.getElementById("boasVindas").textContent =
+                "Bem-vindo(a), " + nome + "!";
+
+            document.getElementById("nomeUsuario").textContent = nome;
+        }
+
+        if (email) {
+            document.getElementById("emailUsuario").textContent = email;
+        }
+
+        if (data) {
+            document.getElementById("dataAcesso").textContent = data;
+        }
+
+        function sair() {
+            sessionStorage.clear();
+            window.location.replace("./login.html");
+        }
+    </script>
+
+</body>
+</html>
