@@ -84,11 +84,15 @@ nav a {
     color: #00ff99;
     font-size: 38px;
     margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
 }
 
 .hero p {
     max-width: 750px;
     font-size: 18px;
+    text-align: center;
+    margin: 0 auto;
 }
 
 /* SEÇÕES */
